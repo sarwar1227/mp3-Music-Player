@@ -40,6 +40,14 @@ def prevsong(event):
 def stopsong(event):
     pygame.mixer.music.stop()
     v.set("")
+def volumeup(event):
+    temp=float(pygame.mixer.music.get_volume())
+    if temp<=1.0:
+        pygame.mixer.music.set_volume(temp+0.1)
+def volumedown(event):
+    temp=float(pygame.mixer.music.get_volume())
+    if temp<=1.0:
+        pygame.mixer.music.set_volume(temp-0.1)
 directorychooser()
 
 label=Label(root,text="Music Player")
@@ -62,9 +70,17 @@ previousbutton.pack()
 stopbutton=Button(root,text="Stop Music")
 stopbutton.pack()
 
+volumeplus=Button(root,text="Volume(+)")
+volumeplus.pack()
+
+volumeminus=Button(root,text="Volume(-)")
+volumeminus.pack()
+
 nextbutton.bind("<Button-1>",nextsong)
 previousbutton.bind("<Button-1>",prevsong)
 stopbutton.bind("<Button-1>",stopsong)
+volumeplus.bind("<Button-1>",volumeup)
+volumeminus.bind("<Button-1>",volumedown)
 
 songlabel.pack()
 root.mainloop()

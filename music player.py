@@ -1,3 +1,5 @@
+'''GUI mp3 MUSIC PLAYER by SARWAR ALI(github.com/sarwar1227) using Python tkinter,pygame and mutagen Module
+   Technologies Required To Run this Code : Python(32/64 bit) version 2/3+ with pygame and mutagen module installed.'''
 import os
 import pygame
 from tkinter.filedialog import askdirectory
